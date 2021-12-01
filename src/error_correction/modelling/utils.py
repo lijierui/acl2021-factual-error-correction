@@ -37,7 +37,6 @@ def recursive_clean(metadata_dict):
             k: recursive_clean(v) for k, v in metadata_dict.items() if v is not None
         }
     elif isinstance(metadata_dict, list) or isinstance(metadata_dict, tuple):
-        print("l or tu")
         return [recursive_clean(k) for k in metadata_dict if k is not None]
     else:
         return metadata_dict

@@ -98,6 +98,18 @@ python -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/masker/model=t5-base,lr=1e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/random_train.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/random_dev.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/random_test.jsonl \
+    --reader supervised \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
 ```
 
 

@@ -1,2 +1,7 @@
 .idea
-.pycache
+__pycache__
+ckpts
+output
+lightning_logs
+resources
+.env

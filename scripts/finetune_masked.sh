@@ -8,7 +8,7 @@ bs=${5:-8}
 seed=${SEED:-42}
 
 output_dir=output/masker/model=${model},lr=${lr},masker=${masker},mutation_source=${mutation_source},mutation_target=${mutation_target},labels=${labels}/seed=$seed/
-
+PYTHONPATH=src
 python \
   -m error_correction.corrector.run \
   --model_name_or_path $model \

@@ -14,13 +14,14 @@ python \
   --model_name_or_path $model \
   --output_dir $output_dir \
   --train_file resources/masking/${masker}_train.jsonl \
-  --val_file resources/masking/${masker}_dev.jsonl \
+  --val_file resources/masking/heuristic_dev.jsonl \
   --do_train \
   --train_batch_size $bs \
   --learning_rate $lr \
   --seed $seed \
-  --num_train_epochs 8 \
+  --num_train_epochs 4 \
   --reader mask \
   --mutation_source ${mutation_source} \
   --mutation_target ${mutation_target} \
-  --labels ${labels}
+  --labels ${labels} \
+  --gpus 1

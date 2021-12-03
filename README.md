@@ -110,6 +110,17 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/masker/model=t5-base,lr=1e-4,masker=random,mutation_source=false,mutation_target=false,labels=all \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/random_train.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/random_dev.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_dev_genre_50_2.jsonl     --reader supervised \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
 ```
 
 
@@ -146,3 +157,11 @@ Greedily decodes tokens
 ```
 python -m error_correction.corrector.language_model <masked_file> <output_file>
 ```
+
+
+
+
+bash scripts/finetune_masked.sh t5-base 5e-5 random all && 
+bash scripts/finetune_masked.sh t5-base 1e-4 random all && 
+bash scripts/finetune_masked.sh t5-base 5e-4 random all
+

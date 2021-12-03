@@ -19,6 +19,19 @@
 
 """
 A masker that keeps a word if either of its neighbors is also in the evidence.
+
+
+python3 src/error_correction/masking/trigram_heuristic_masker.py \
+    --in_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_train_genre_50_2.jsonl \
+    --out_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/trigram_train.jsonl
+
+python3 src/error_correction/masking/trigram_heuristic_masker.py \
+    --in_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_dev_genre_50_2.jsonl \
+    --out_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/trigram_dev.jsonl
+
+python3 src/error_correction/masking/trigram_heuristic_masker.py \
+    --in_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2.jsonl \
+    --out_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/trigram_test.jsonl
 """
 
 import json
@@ -46,6 +59,8 @@ def common_tokens(sentence1, sentence2):
     sentence2_words = set(sentence2)
     for idx in range(len(sentence1)):
         trigram_words = [sentence1[idx]]
+        if idx == 0 or idx == len(sentence1) - 1:
+            continue
         if idx != 0:
             trigram_words.append(sentence1[idx - 1])
         if idx != len(sentence1) - 1:

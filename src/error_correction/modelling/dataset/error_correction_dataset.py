@@ -21,6 +21,7 @@ from torch.utils.data import Dataset
 from tqdm import tqdm
 from typing import Dict
 from pathlib import Path
+import random
 
 from error_correction.modelling.utils import (
     encode_line,
@@ -82,10 +83,10 @@ class ErrorCorrectionSeq2SeqDataset(Dataset):
         return "correction: " + target
     
     def random_replace(self, source, replace_rate=0.5):
-    source = source.split()
-    for i in range(len(source)):
-        if random.random() < replace_rate: source[i] = '[MASK]'
-    return ' '.join(source)
+        source = source.split()
+        for i in range(len(source)):
+            if random.random() < replace_rate: source[i] = '[MASK]'
+        return ' '.join(source)
 
     def __getitem__(self, index) -> Dict[str, torch.Tensor]:
         instance = self.instances[index]

@@ -80,7 +80,7 @@ class MaskBasedCorrectionReader(Reader):
         a = {
             "source": " ".join(
                 [
-                    token if idx not in masked_claim else "[MASK]"
+                    token #if idx not in masked_claim else "[MASK]"
                     for idx, token in enumerate(claim_tokens)
                 ]
             ),

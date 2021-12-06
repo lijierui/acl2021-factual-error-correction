@@ -80,6 +80,12 @@ class ErrorCorrectionSeq2SeqDataset(Dataset):
             )
 
         return "correction: " + target
+    
+    def random_replace(self, source, replace_rate=0.5):
+    source = source.split()
+    for i in range(len(source)):
+        if random.random() < replace_rate: source[i] = '[MASK]'
+    return ' '.join(source)
 
     def __getitem__(self, index) -> Dict[str, torch.Tensor]:
         instance = self.instances[index]
@@ -90,7 +96,8 @@ class ErrorCorrectionSeq2SeqDataset(Dataset):
         assert tgt_line, f"empty tgt line for index {index}"
 
         masks = 0
-        source_line = original_source_line
+        #source_line = original_source_line
+        source_line = self.random_replace(original_source_line, replace_rate=0.5)
         while "[MASK]" in source_line:
             source_line = source_line.replace("[MASK]", f"<extra_id_{masks}>", 1)
             masks += 1

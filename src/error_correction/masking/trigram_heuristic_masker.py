@@ -65,13 +65,14 @@ def common_tokens(sentence1, sentence2):
             trigram_words.append(sentence1[idx - 1])
         if idx != len(sentence1) - 1:
             trigram_words.append(sentence1[idx + 1])
-        
+
         trigram_set = set(trigram_words)
         if len(trigram_set.intersection(sentence2_words)) < 3:
             # If none of the trigram words are in the evidence, mask the current word
             mask_idx.append(idx)
-    
+
     return mask_idx
+
 
 if __name__ == "__main__":
     parser = ArgumentParser()

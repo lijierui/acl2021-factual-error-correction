@@ -5,3 +5,4 @@ output
 lightning_logs
 resources
 .env
+*.zip

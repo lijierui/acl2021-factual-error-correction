@@ -172,6 +172,9 @@ def calculate_sari(
 ) -> Dict:
     a, b, c, d = [], [], [], []
     for input, output, ref in zip(input_lns, output_lns, reference_lns):
+        # print("INPUT", input)
+        # print("OUTPUT", output)
+        # print("REF", ref, "\n")
         a_, b_, c_, d_ = SARIsent(input, output, [ref])
 
         a.append(a_)

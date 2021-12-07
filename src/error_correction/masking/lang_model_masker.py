@@ -42,8 +42,15 @@ if __name__ == "__main__":
                 k, range(len(instance["scores"])), instance["scores"].__getitem__
             )
 
-            masked = " ".join([tok if idx not in top else ("[MASK]" if "##" not in tok else "##[MASK]") for idx,tok in enumerate(instance["mask_tokens"])]).replace(" ##","")
-            idxs = [idx for idx,val in enumerate(masked.split()) if "[MASK]" in val]
+            masked = " ".join(
+                [
+                    tok
+                    if idx not in top
+                    else ("[MASK]" if "##" not in tok else "##[MASK]")
+                    for idx, tok in enumerate(instance["mask_tokens"])
+                ]
+            ).replace(" ##", "")
+            idxs = [idx for idx, val in enumerate(masked.split()) if "[MASK]" in val]
 
             instance["original_claim"] = " ".join(instance["mask_tokens"]).replace(
                 " ##", ""

@@ -54,7 +54,6 @@ def prepare_human_eval(predictions_file: pathlib.Path):
 def run_human_eval(predictions_file):
 
     predictions = prepare_human_eval(predictions_file)
-    predictions = random.choices(predictions, k=2)
 
     results = []
     for prediction in predictions:

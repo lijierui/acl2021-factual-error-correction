@@ -8,7 +8,7 @@ def is_intelligible():
     response = ""
     while response not in ["y", "n"]:
         response = input(
-            "Is output sentence free of any grammatical mistakes and is comprehensible? "
+            "Is output sentence free of any grammatical mistakes and is comprehensible? (y/n): "
         )
 
     return response
@@ -17,7 +17,7 @@ def is_intelligible():
 def supported_by_evidence():
     response = ""
     while response not in ["y", "n"]:
-        response = input("Does the evidence support the output sentence? ")
+        response = input("Does the evidence support the output sentence? (y/n): ")
 
     return response
 
@@ -29,7 +29,8 @@ def error_correction():
             """Did the output sentence correct the errors in the original sentence without including irrelevant information?"
             1) The sentence is improved with respect to the evidence.
             2) Unrelated information has been introduced.
-            3) No update to the original sentence was needed but the output sentence contains changes.\n """
+            3) No update to the original sentence was needed but the output sentence contains changes.\n
+            (1,2, or 3): """
         )
 
     return response
@@ -75,7 +76,7 @@ def run_human_eval(predictions_file):
             continue
 
     print(results)
-    predictions_file.with_name("results.json").write_text(json.dumps({"results": results}, indent=2))
+    predictions_file.with_name(f"{predictions_file.stem}-results.json").write_text(json.dumps({"results": results}, indent=2))
 
 
 

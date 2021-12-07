@@ -764,6 +764,86 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
 """
 
 
+# NEW 40% RANDOM PER EPOCH
+
+# black-box (gold)
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/random-per-epoch \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+
+# white-box (gold)
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/random-per-epoch \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+"""
+
+# black-box (ir)
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/random-per-epoch \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+# white-box (ir)
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/random-per-epoch \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+"""
+
+# heuristic (ir)
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/ckpts/random-per-epoch \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+
+
 
 # NEW 50% RANDOM PER EPOCH
 

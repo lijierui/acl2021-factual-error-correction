@@ -90,16 +90,17 @@ class ErrorCorrectionSeq2SeqDataset(Dataset):
         assert original_source_line, f"empty source line for index {index}"
         assert tgt_line, f"empty tgt line for index {index}"
 
-        # On the fly sampling of masks
-        original_source_line_new = ""
-        for token in tgt_line.split(" "):
-            if random.random() < 0.5 and token != ".":
-                original_source_line_new += "[MASK] "
-            else:
-                original_source_line_new += token + " "
+        # # On the fly sampling of masks
+        # original_source_line_new = ""
+        # for token in tgt_line.split(" "):
+        #     if random.random() < 0.5 and token != ".":
+        #         original_source_line_new += "[MASK] "
+        #     else:
+        #         original_source_line_new += token + " "
+        # source_line = original_source_line_new
 
         masks = 0
-        source_line = original_source_line_new
+        source_line = original_source_line
         while "[MASK]" in source_line:
             source_line = source_line.replace("[MASK]", f"<extra_id_{masks}>", 1)
             masks += 1

@@ -780,6 +780,15 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_target false \
     --labels all
 
+ 'test_avg_sari_avgaddscore': 0.33917972011738245,
+ 'test_avg_sari_avgdelscore': 0.44193388621290297,
+ 'test_avg_sari_avgkeepscore': 0.7006637462299761,
+ 'test_avg_sari_finalscore': 0.4939257841867538,
+ 'test_avg_summ_len': 31.179253252238553,
+ 'test_loss': tensor(0.2911, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.3392, device='cuda:0')}
+
+
 """
 
 # white-box (gold)
@@ -847,10 +856,11 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
 
 # NEW 50% RANDOM PER EPOCH
 
+# gold-box (gold)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
@@ -860,13 +870,22 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_target false \
     --labels all
 
+ 'test_avg_loss': 0.28364327549934387,
+ 'test_avg_sari_avgaddscore': 0.34025396118567036,
+ 'test_avg_sari_avgdelscore': 0.44224566368192825,
+ 'test_avg_sari_avgkeepscore': 0.7053763082043567,
+ 'test_avg_sari_finalscore': 0.4959586443573185,
+ 'test_avg_summ_len': 31.417131272174355,
+ 'test_loss': tensor(0.2836, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.3403, device='cuda:0')}
+
 """
 
 # white-box (gold)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
@@ -875,13 +894,24 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_loss': 1.227983832359314,
+ 'test_avg_sari_avgaddscore': 0.2951546780395606,
+ 'test_avg_sari_avgdelscore': 0.5715466310017833,
+ 'test_avg_sari_avgkeepscore': 0.6078436325957309,
+ 'test_avg_sari_finalscore': 0.4915149805456916,
+ 'test_avg_summ_len': 32.25273736313184,
+ 'test_loss': tensor(1.2280, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.2952, device='cuda:0')}
+
+
 """
 
 # black-box (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
@@ -891,12 +921,21 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_target false \
     --labels all
 
+'test_avg_sari_avgaddscore': 0.5530342388092173,
+ 'test_avg_sari_avgdelscore': 0.6105451323798814,
+ 'test_avg_sari_avgkeepscore': 0.4394993994169276,
+ 'test_avg_sari_finalscore': 0.5343595902020087,
+ 'test_avg_summ_len': 32.93183578621224,
+ 'test_loss': tensor(1.2433, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.5530, device='cuda:0')}
+
+
 """
 # white-box (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
@@ -905,13 +944,24 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_loss': 0.30469807982444763,
+ 'test_avg_sari_avgaddscore': 0.3370047571785226,
+ 'test_avg_sari_avgdelscore': 0.39096578224283013,
+ 'test_avg_sari_avgkeepscore': 0.7589713831820178,
+ 'test_avg_sari_finalscore': 0.4956473075344568,
+ 'test_avg_summ_len': 30.902112313240597,
+ 'test_loss': tensor(0.3047, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.3370, device='cuda:0')}
+
+
 """
 
 # heuristic (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
@@ -920,6 +970,16 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_loss': 0.7485474348068237,
+ 'test_avg_sari_avgaddscore': 0.2558244730681189,
+ 'test_avg_sari_avgdelscore': 0.7495633595474089,
+ 'test_avg_sari_avgkeepscore': 0.7564163431206883,
+ 'test_avg_sari_finalscore': 0.5872680585787388,
+ 'test_avg_summ_len': 32.255110660584556,
+ 'test_loss': tensor(0.7485, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.2558, device='cuda:0')}
+
 
 """
 
@@ -928,7 +988,7 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/60_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_gold_test_genre_50_2_new.jsonl \
@@ -938,13 +998,22 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_target false \
     --labels all
 
+ 'test_avg_sari_avgaddscore': 0.33917972011738245,
+ 'test_avg_sari_avgdelscore': 0.44193388621290297,
+ 'test_avg_sari_avgkeepscore': 0.7006637462299761,
+ 'test_avg_sari_finalscore': 0.4939257841867538,
+ 'test_avg_summ_len': 31.179253252238553,
+ 'test_loss': tensor(0.2911, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.3392, device='cuda:0')}
+------------------------------------------------------------
+
 """
 
 # white-box (gold)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/60_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_gold_test_genre_50_2.jsonl \
@@ -953,13 +1022,22 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_sari_avgaddscore': 0.30810148933634784,
+ 'test_avg_sari_avgdelscore': 0.5719029673516324,
+ 'test_avg_sari_avgkeepscore': 0.6077325629721095,
+ 'test_avg_sari_finalscore': 0.49591233988669664,
+ 'test_avg_summ_len': 31.862306884655766,
+ 'test_loss': tensor(1.1442, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.3081, device='cuda:0')}
+
 """
 
 # black-box (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/60_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/blackbox_ir_test_genre_50_2.jsonl \
@@ -969,12 +1047,22 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_target false \
     --labels all
 
+ 'test_avg_gen_time': 0.019598418388698923,
+ 'test_avg_loss': 1.265838623046875,
+ 'test_avg_sari_avgaddscore': 0.55088706603072,
+ 'test_avg_sari_avgdelscore': 0.6107579359718485,
+ 'test_avg_sari_avgkeepscore': 0.43928365218158105,
+ 'test_avg_sari_finalscore': 0.5336428847280499,
+ 'test_avg_summ_len': 33.1136070229796,
+ 'test_loss': tensor(1.2658, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.5509, device='cuda:0')}
+
 """
 # white-box (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/60_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/whitebox_ir_test_genre_50_2.jsonl \
@@ -983,13 +1071,21 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_loss': 0.31785914301872253,
+ 'test_avg_sari_avgaddscore': 0.3370548894021056,
+ 'test_avg_sari_avgdelscore': 0.3906416366134295,
+ 'test_avg_sari_avgkeepscore': 0.7543470087925105,
+ 'test_avg_sari_finalscore': 0.49401451160268184,
+ 'test_avg_summ_len': 30.770221535291086,
+
 """
 
 # heuristic (ir)
 """
 PYTHONPATH=src python3 -m error_correction.corrector.run \
     --model_name_or_path t5-base \
-    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/60_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
     --do_predict \
     --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
     --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/heuristic_ir_test_genre_50_2.jsonl \
@@ -998,5 +1094,137 @@ PYTHONPATH=src python3 -m error_correction.corrector.run \
     --mutation_source true \
     --mutation_target false \
     --labels all
+
+ 'test_avg_sari_avgaddscore': 0.2537357673293596,
+ 'test_avg_sari_avgdelscore': 0.7483108838468696,
+ 'test_avg_sari_avgkeepscore': 0.7545575278879951,
+ 'test_avg_sari_finalscore': 0.5855347263547415,
+ 'test_avg_summ_len': 31.433350228079068,
+ 'test_loss': tensor(0.7500, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.2537, device='cuda:0')}
+-------------------------------------------------------------
+"""
+
+# 50% Attention
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+
+# 25% Attention
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test_025.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test_025.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/attn_mask_test_025.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+
+# 50% Gradient
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+"""
+
+# 25% Gradient
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test_025.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test_025.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/grad_mask_test_025.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+ 'test_avg_gen_time': 0.01775621380962309,
+ 'test_avg_loss': 0.1540781706571579,
+ 'test_avg_sari_avgaddscore': 0.7912629376328153,
+ 'test_avg_sari_avgdelscore': 0.47533158227227007,
+ 'test_avg_sari_avgkeepscore': 0.9466499610849604,
+ 'test_avg_sari_finalscore': 0.7377481603300153,
+ 'test_avg_summ_len': 31.479134466769708,
+ 'test_loss': tensor(0.1541, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.7913, device='cuda:0')}
+
+"""
+
+# 50% Combine
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test.jsonll \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+ 'test_avg_sari_avgaddscore': 0.5765458537897199,
+ 'test_avg_sari_avgdelscore': 0.6169006014736309,
+ 'test_avg_sari_avgkeepscore': 0.5906641695175836,
+ 'test_avg_sari_finalscore': 0.5947035415936448,
+ 'test_avg_summ_len': 31.489953632148378,
+ 'test_loss': tensor(0.4087, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.5765, device='cuda:0')}
+
+"""
+
+# 25% Combine
+"""
+PYTHONPATH=src python3 -m error_correction.corrector.run \
+    --model_name_or_path t5-base \
+    --output_dir /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/output/50_prob_masker/model=t5-base,lr=5e-5,masker=random,mutation_source=false,mutation_target=false,labels=all/seed=42 \
+    --do_predict \
+    --train_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test_025.jsonl \
+    --val_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test_025.jsonl \
+    --test_file /home/alex/Desktop/classes/F2021/CS388/final/acl2021-factual-error-correction/resources/masking/new_masks/comb_mask_test_025.jsonl \
+    --reader mask \
+    --mutation_source true \
+    --mutation_target false \
+    --labels all
+
+ 'test_avg_loss': 0.14183606207370758,
+ 'test_avg_sari_avgaddscore': 0.7657803990763459,
+ 'test_avg_sari_avgdelscore': 0.6503595910715307,
+ 'test_avg_sari_avgkeepscore': 0.8961796052274313,
+ 'test_avg_sari_finalscore': 0.770773198458436,
+ 'test_avg_summ_len': 31.520350334878927,
+ 'test_loss': tensor(0.1418, device='cuda:0'),
+ 'test_sari_avgaddscore': tensor(0.7658, device='cuda:0')}
+
 
 """

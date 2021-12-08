@@ -55,7 +55,7 @@ def run_human_eval(idx: int, predictions_file: pathlib.Path):
     set_2 = random.sample(set_1, int(.2 * 33))
 
     while len(set_2) < 33:
-        new_example = random.sample(predictions, 1)
+        new_example = random.sample(predictions, 1)[0]
         if new_example not in set_2 and set_1 not in set_2:
             set_2.append(new_example)
 
@@ -73,7 +73,7 @@ def run_human_eval(idx: int, predictions_file: pathlib.Path):
 
     # Now add the remaining unique examples
     while len(set_3) < 33:
-        example = random.sample(predictions, 1)
+        example = random.sample(predictions, 1)[0]
         if example not in set_1 and example not in set_2 and example not in set_3:
             set_3.append(example)
 
@@ -88,8 +88,8 @@ def run_human_eval(idx: int, predictions_file: pathlib.Path):
     ayush_dir.mkdir(exist_ok=True, parents=True)
 
     (alex_dir / "alex.json").write_text(json.dumps({"predictions": set_1}, indent=2))
-    (jierui_dir / "jierui.json").write_text(json.dumps({"predictions": set_1}, indent=2))
-    (ayush_dir / "ayush.json").write_text(json.dumps({"predictions": set_1}, indent=2))
+    (jierui_dir / "jierui.json").write_text(json.dumps({"predictions": set_2}, indent=2))
+    (ayush_dir / "ayush.json").write_text(json.dumps({"predictions": set_3}, indent=2))
 
 
 

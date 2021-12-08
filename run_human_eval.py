@@ -42,10 +42,10 @@ def prepare_human_eval(predictions_file: pathlib.Path):
     corrections = []
     for instance in json.loads(predictions_file.read_text())["predictions"]:
         correction = {
-            "input_masked": instance["input_masked"],
+            "INPUT_MASKED": instance["input_masked"],
             "target": instance["original"],
-            "prediction": instance["prediction"],
-            "evidence": instance["evidence"],
+            "PREDICTION": instance["prediction"],
+            "metadata": instance["metadata"],
         }
         corrections.append(correction)
 

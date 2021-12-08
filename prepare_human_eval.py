@@ -39,6 +39,7 @@ def prepare_human_eval(predictions_file: pathlib.Path):
                 "input_masked": instance["metadata"]["source"],
                 "prediction": instance["prediction"],
                 "evidence": instance["metadata"]["evidence"],
+                "metadata": instance["metadata"]
             }
             corrections.append(correction)
 
